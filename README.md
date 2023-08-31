@@ -1,9 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/rlFvo65f)
-# PBA Assignment - FRAME
+# Decentralized Exchange Pallet
 
-## !! See [ASSIGNMENT.md](./ASSIGNMENT.md) for instructions to complete this assignment !!
+- Uses a multi-asset pallet to represent many tokens.
+  - You may create your own or use the included `pallet_assets`.
+- A Uniswap Version 2 style DEX to allow users to trustlessly exchange tokens with one another.
+  - Implement rewards to incentivize users to create pools.
+  - Exposes an API from the pallet which acts as a “price oracle” based on the existing liquidity pools.
 
-**_TODO: Update this README for the Grading Team about your project!_**
+### TODO
+
+- Create some kind of asset or marketplace where users can use any token to purchase resources, using the price oracle to make sure users pay enough.
+- Integrate other DeFi utilities on top of your DEX.
 
 ---
 
