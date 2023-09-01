@@ -26,6 +26,7 @@ use sp_std::prelude::*;
 #[cfg(feature = "std")]
 use sp_version::NativeVersion;
 use sp_version::RuntimeVersion;
+use frame_support::PalletId;
 
 // A few exports that help ease life for downstream crates.
 pub use frame_support::{
@@ -311,11 +312,19 @@ impl Convert<AuraId, AccountId> for AuthorityToAccount {
 	}
 }
 
+parameter_types! {
+	pub const DexPalletId: PalletId = PalletId(*b"pba/dex0");
+}
+
 /// Configure the pallet-dex in pallets/dex.
 impl pallet_dex::Config for Runtime {
 	type RuntimeEvent = RuntimeEvent;
 	type NativeBalance = Balances;
 	type Fungibles = Assets;
+	type MinPoolDeposit = ConstU32<1_000>;
+	type FeePercentage = ConstU32<5>;
+	type CreatePoolOrigin = frame_system::EnsureSigned<AccountId>;
+	type PalletId = DexPalletId;
 }
 
 // Create the runtime by composing the FRAME pallets that were previously configured.

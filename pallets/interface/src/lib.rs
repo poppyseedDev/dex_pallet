@@ -1,18 +1,5 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
-// Note that these interfaces should not limit or heavily influence the design of your pallet.
-//
-// These interfaces do NOT make sense to expose as the extrinsics of your pallet.
-// Instead, these will simply be used to execute unit tests to verify the basic logic of your
-// pallet is working. You should design your own extrinsic functions which make sense for
-// exposing to end users of your pallet.
-//
-// It should be totally possible to create more complex or unique pallets, while adhering to
-// the interfaces below.
-//
-// If any of these interfaces are not compatible with your design or vision, talk to an
-// instructor and we can figure out the best way forward.
-
 use core::{cmp::Ord, fmt::Debug};
 use frame_support::{
 	dispatch::Vec,
